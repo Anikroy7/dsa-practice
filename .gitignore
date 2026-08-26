@@ -1,0 +1,38 @@
+# C/C++ build outputs
+build/
+out/
+**/build/
+**/out/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.elf
+*.bin
+*.exe
+*.out
+*.pdb
+*.ilk
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# Competitive-programming/editor generated files
+.cph/
+.vscode/*.log
+
+# IDE and OS files
+.vs/
+*.user
+*.suo
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
