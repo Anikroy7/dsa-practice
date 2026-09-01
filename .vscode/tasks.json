@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++: Build mergeLL.cpp",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "-std=c++17",
+        "${workspaceFolder}/dsa-master/linkedlist/singly/mergeLL.cpp",
+        "-o",
+        "${workspaceFolder}/dsa-master/linkedlist/singly/mergeLL.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Build the current C++ file before debugging."
+    }
+  ]
+}

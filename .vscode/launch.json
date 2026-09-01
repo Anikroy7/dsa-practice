@@ -2,16 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug mergeSort",
+      "name": "C++: Debug mergeLL.cpp",
       "type": "cppdbg",
       "request": "launch",
-      "program": "C:/dsa/psInter/mergeSort.exe",
+      "program": "${workspaceFolder}/dsa-master/linkedlist/singly/mergeLL.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "C:/dsa/psInter",
+      "cwd": "${workspaceFolder}/dsa-master/linkedlist/singly",
+      "environment": [],
       "externalConsole": true,
       "MIMode": "gdb",
       "miDebuggerPath": "gdb.exe",
+      "preLaunchTask": "C++: Build mergeLL.cpp",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
