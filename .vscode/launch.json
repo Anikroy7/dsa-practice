@@ -2,18 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C++: Debug mergeLL.cpp",
+      "name": "C/C++: g++.exe build and debug active file",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/dsa-master/linkedlist/singly/mergeLL.exe",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/dsa-master/linkedlist/singly",
+      "cwd": "${fileDirname}",
       "environment": [],
       "externalConsole": true,
       "MIMode": "gdb",
       "miDebuggerPath": "gdb.exe",
-      "preLaunchTask": "C++: Build mergeLL.cpp",
+      "preLaunchTask": "C/C++: g++.exe build active file",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
