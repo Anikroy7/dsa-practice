@@ -4,19 +4,38 @@ using namespace std;
 
 bool solve(string s, string t)
 {
-    int st = 0;
-    int tt = 0;
+    if (s.size() != t.size())
+        return false;
+    bool res = true;
+    map<char, int> mp;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (mp[s[i]])
+        {
+            mp[s[i]]++;
+        }
+        else
+        {
+            mp[s[i]] = 1;
+        }
+    }
+    for (int i = 0; i < t.size(); i++)
+    {
+        if (mp[t[i]] > 1)
+        {
+            mp[t[i]]--;
+        }
+        else
+        {
+            mp.erase(t[i]);
+        }
+    }
 
-    for (auto it : s)
+    if (!mp.empty())
     {
-        st += it;
+        res = false;
     }
-    for (auto it : t)
-    {
-        tt += it;
-    }
-    if( st == tt) return true;
-    return false;
+    return res;
 }
 int main()
 {
