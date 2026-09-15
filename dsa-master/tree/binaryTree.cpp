@@ -19,9 +19,11 @@ TreeNode *binaryTree()
 {
     TreeNode *root = new TreeNode(4);
     root->left = new TreeNode(2);
-    root->right = new TreeNode(2);
-    root->right->right = new TreeNode(3);
-    root->left->left = new TreeNode(3);
+    root->right = new TreeNode(7);
+    root->left->left = new TreeNode(1);
+    root->left->right = new TreeNode(3);
+    root->right->right = new TreeNode(9);
+    root->right->left = new TreeNode(6);
     return root;
 }
 
@@ -72,19 +74,16 @@ void postOrder(TreeNode *root)
 
 bool invertTra(TreeNode *r1, TreeNode *r2)
 {
-    if (r1 == NULL && r2 == NULL)
+    if (r1 == NULL and r2 == NULL)
         return true;
-
     if (r1 == NULL || r2 == NULL)
         return false;
-
     if (r1->data != r2->data)
         return false;
 
     bool res1 = invertTra(r1->left, r2->right);
     bool res2 = invertTra(r1->right, r2->left);
-
-    return res1 && res2;
+    return (res1 and res2);
 }
 
 bool isInvert(TreeNode *root)
@@ -95,17 +94,18 @@ bool isInvert(TreeNode *root)
     return invertTra(root->left, root->right);
 }
 
-bool isInvert(TreeNode *root)
+void invertOrder(TreeNode *root)
 {
-    if (root->left != root->right)
-        return false;
-
-    return invertTra(root->left, root->right);
+    if (root == NULL)
+        return;
+    cout << root->data << " ";
+    invertOrder(root->right);
+    invertOrder(root->left);
 }
-
 main()
 {
     TreeNode *root = binaryTree();
-    cout << isInvert(root);
+    // cout << isInvert(root);
+    invertOrder(root);
     return 0;
 }
