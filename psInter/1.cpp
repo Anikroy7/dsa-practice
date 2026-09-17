@@ -5,17 +5,26 @@ using namespace std;
 int main()
 {
 
-    vector<int> vct = {2, 7, 11, 15};
-    int target = 9;
-
-    int pre[vct.size()]={0};
-
-    for (int i = 1; i <= vct.size(); i++)
+    vector<int> vct = {-1, -2, -3, -4, -5};
+    int tar = -8;
+    map<int, int> mp;
+    for (int i = 0; i < vct.size(); i++)
     {
-        pre[i] = pre[i - 1] + vct[i-1];
+        int dif = tar - vct[i];
+        cout << dif << endl;
+        if (mp.empty())
+        {
+            mp.insert({vct[i], 0});
+        }
+        else if (mp.count(dif) > 0)
+        {
+            cout << mp[dif] << " " << i;
+            break;
+        }
+        else
+        {
+            mp.insert({vct[i], i});
+        }
     }
-    for (int i = 0; i <= vct.size(); i++)
-    {
-        cout << pre[i]<< " ";
-    }
+    return 0;
 }

@@ -2,16 +2,23 @@
 #include <vector>
 using namespace std;
 
-/*
-  1 2 3 4 7
-*/
+void reverseString(vector<char> &s)
+{
+  int left = 0;
+  int right = s.size() - 1;
+
+  while (left < right)
+  {
+    char temp = s[left];
+    s[left] = s[right];
+    s[right] = temp;
+
+    left++;
+    right--;
+  }
+}
 int main()
 {
-    vector<string> vct = {"h", "e", "l", "l", "o"};
-
-    int left = 0;
-    int right = vct.size() - 1;
-    while (left < right)
-    {
-    }
+  vector<char> vct = {'h', 'e', 'l', 'l', 'o'};
+  reverseString(vct);
 }
